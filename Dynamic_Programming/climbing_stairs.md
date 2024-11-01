@@ -1,22 +1,22 @@
 # Climbing Stairs
 
 ## Problem Description
-Given `n` steps, each time you can either climb 1 or 2 steps. Determine the number of distinct ways to reach the top of a staircase with `n` steps.
+Given $$n$$ steps, each time you can either climb 1 or 2 steps. Determine the number of distinct ways to reach the top of a staircase with $$n$$ steps.
 
 ## Intuition
-The problem a pattern similar to the Fibonacci sequence. To reach the `n`th step, you can:
-1. Take a single step from the (n-1)th step.
-2. Take two steps from the (n-2)th step.
+The problem a pattern similar to the Fibonacci sequence. To reach the $$n$$-th step, you can:
+1. Take a single step from the $$(n-1)$$-th step.
+2. Take two steps from the $$(n-2)$$-th step.
 
-Thus, the number of ways to reach the `n`th step, `ways(n)`, can be expressed as:
+Thus, the number of ways to reach the $$n$$-th step, $$ways(n)$$, can be expressed as:
    $$ways(n) = ways(n - 1) + ways(n - 2)$$
 
 ## Approach
-I used a dynamic programming approach with a single-pass loop. We initialize two base cases: the number of ways to climb 0 steps (1 way, by doing nothing) and the number of ways to climb 1 step (also 1 way). For each step from 2 up to `n`, we compute the ways to reach that step by summing the ways to reach the two previous steps. This allows us to calculate the result in `O(n)` time without using extra space for an array.
+I used a dynamic programming approach with a single-pass loop. We initialize two base cases: the number of ways to climb 0 steps (1 way, by doing nothing) and the number of ways to climb 1 step (also 1 way). For each step from 2 up to $$n$$, we compute the ways to reach that step by summing the ways to reach the two previous steps. This allows us to calculate the result in $$O(n)$$ time without using extra space for an array.
 
 ## Complexity
 - **Time Complexity**: $$O(n)$$  
-   We iterate from 2 up to `n`, making it an `O(n)` solution.
+   We iterate from 2 up to $$n$$, making it an $$O(n)$$ solution.
 
 - **Space Complexity**: $$O(1)$$  
    Only two variables are used to store the previous results, so the space complexity is constant.
